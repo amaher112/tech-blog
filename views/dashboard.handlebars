@@ -1,0 +1,10 @@
+
+ {{#if logged_in}}
+     {{!-- Displays all of my posts with an option to add a new one --}}
+     {{!-- Add a button for a new post at the bottom
+     That takes you to a form for title and content --}}
+     {{!-- It will add it to the list of posts --}}
+          {{else}}
+            <a href="/login">login</a>
+            {{!-- redirect you to the login page --}}
+          {{/if}}
