@@ -1,10 +1,32 @@
 
- {{#if logged_in}}
+
      {{!-- Displays all of my posts with an option to add a new one --}}
      {{!-- Add a button for a new post at the bottom
      That takes you to a form for title and content --}}
      {{!-- It will add it to the list of posts --}}
-          {{else}}
-            <a href="/login">login</a>
+       
             {{!-- redirect you to the login page --}}
-          {{/if}}
+    <h1>Welcome {{username}}</h1>
+    {{#each posts }}
+<div class="row mb-4 ">
+  <div class="col-md-5">
+    <h2>
+   {{this.title}}
+      <a href="/post/{{this.id}}">{{this.title}}</a>
+    </h2>
+    <p>
+      {{this.contents}}
+    </p>
+    </div>
+ 
+</div>
+{{/each}}
+<form id="create-post">
+  <label>Title</label>
+  <input type="text" id="title">
+  <label>Contents</label>
+  <textarea name="contents" id="contents" cols="30" rows="10"></textarea>
+  <button type="submit">Submit</button>
+</form>
+
+<script src="./post.js"></script>
