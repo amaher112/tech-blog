@@ -15,4 +15,7 @@ const createPostHandler = (e) => {
     })
 }
 
+
 document.querySelector('#create-post').addEventListener('submit', createPostHandler)
+
+
