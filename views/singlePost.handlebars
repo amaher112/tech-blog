@@ -1,2 +1,34 @@
 {{!-- Shows post title, contents, creators username, date created and an option to leave a comment--}}
 {{!-- When I click the submit comment button it saves and displays the comment, creator's username and  the date--}}
+{{!-- add comment form --}}
+
+<div class="text-center">
+  <h2>{{title}}</h2>
+  <p>{{contents}}</p>
+  <p>Created by {{user.username}} on {{format_date date_created}}</p>
+ </div>
+ <div>
+    <h3>Comments</h3>
+    {{#each comments}}
+  <div id="comment-list" class="row mb-4">
+    <div class="col-md-5">
+      <p>
+        {{this.body}}
+      </p>
+      <p>Created by {{user.username}} on {{format_date date_created}}</p>
+    </div>
+
+  </div>
+{{/each}}
+    </p>
+ </div>
+
+ <form id="create-comment">
+  <label>Add a Comment:</label>
+  <textarea name="body" id="comment-body" cols="30" rows="5"></textarea>
+  <button id="create-comment" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+<script src="/comment.js"></script>
